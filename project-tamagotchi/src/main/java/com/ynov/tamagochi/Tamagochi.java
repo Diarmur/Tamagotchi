@@ -1,10 +1,11 @@
 package com.ynov.tamagochi;
 
 public class Tamagochi {
-    int bonheur = 15;
+    int happiness = 15;
     int age = 0;
-    String StagesOfLife = "oeuf";
-    int faim = 100; //en pourcent  
+    String StagesOfLife = "egg";
+    int hunger = 100; //en pourcent 
+    boolean eat = false; 
 
 
     // pour chaque uniter de temps passer
