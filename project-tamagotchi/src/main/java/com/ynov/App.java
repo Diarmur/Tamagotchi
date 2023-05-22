@@ -29,8 +29,13 @@ public class App extends Application {
 
     public static void main(String[] args) {
         Time timer = new Time();
-
-        System.out.println(timer.elapsedTime());
+        while (timer.timeUnit !=10) {
+            if (timer.elapsedTime()) {
+                System.out.println("+1");
+            }
+        }
+       
+        
     }
 
 }
