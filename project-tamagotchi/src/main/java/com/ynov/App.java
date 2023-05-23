@@ -2,6 +2,7 @@ package com.ynov;
 
 import com.ynov.tamagochi.Heal;
 import com.ynov.tamagochi.Tamagotchi;
+import com.ynov.time.Time;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -26,8 +27,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        // Time timer = new Time();
         Tamagotchi tama = new Tamagotchi("test");
+
         // Heal heal = new Heal(tama);
         // heal.Sick();
         // tama.age++;
@@ -36,7 +37,8 @@ public class App extends Application {
         // heal.DeathBySick();
         // System.out.println(tama.StagesOfLife);
 
-        System.out.println(timer.elapsedTime());
+        // Time timer = new Time();
+        // System.out.println(timer.elapsedTime());
     }
 
 }
