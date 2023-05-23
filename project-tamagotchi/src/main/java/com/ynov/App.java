@@ -1,15 +1,13 @@
 package com.ynov;
 
-
-
-import com.ynov.time.Time;
+import com.ynov.tamagochi.Heal;
+import com.ynov.tamagochi.Tamagotchi;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
 
 /**
  * JavaFX App
@@ -28,7 +26,15 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        Time timer = new Time();
+        // Time timer = new Time();
+        Tamagotchi tama = new Tamagotchi("test");
+        // Heal heal = new Heal(tama);
+        // heal.Sick();
+        // tama.age++;
+        // System.out.println(tama.sick);
+        // heal.HealTamagotchi();
+        // heal.DeathBySick();
+        // System.out.println(tama.StagesOfLife);
 
         System.out.println(timer.elapsedTime());
     }

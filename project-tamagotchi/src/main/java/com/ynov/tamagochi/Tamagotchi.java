@@ -1,15 +1,20 @@
 package com.ynov.tamagochi;
 
-public class Tamagochi {
-    String name;
-    int happiness = 15;
-    int age = 0;
-    String StagesOfLife = "egg";
-    int hunger = 100; // en pourcent
-    boolean eat = false;
-    int eatStrike = 0;
+public class Tamagotchi {
+    public String name;
+    public int happiness = 15;
+    public int age = 0;
+    public String StagesOfLife = "elder";
 
-    Tamagochi(String name) {
+    public int hunger = 100; // en pourcent
+    public boolean eat = false;
+    public int eatStrike = 0;
+
+    public boolean sick = false;
+
+    public boolean isClean = true;
+
+    public Tamagotchi(String name) {
         this.name = name;
     }
 
