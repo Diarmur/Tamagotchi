@@ -16,17 +16,17 @@ public class Tamagotchi {
 
     // pour chaque uniter de temps passer
     void update(){
-    if(this.allReadyEat == true){
-        this.allReadyEat = false;
-        this.dirty = true;
-        this.hunger = 0;
-    }else{
-        this.hunger ++;
-        this.happiness -= this.hunger *5;
+        if(this.allReadyEat == true){
+            this.allReadyEat = false;
+            this.dirty = true;
+            this.hunger = 0;
+        }else{
+            this.hunger ++;
+            this.happiness -= this.hunger *5;
+            }
+        if(this.dirty == true){
+            this.happiness -=3;
         }
-    if(this.dirty == true){
-        this.happiness -=3;
-    }
     }
 
 
