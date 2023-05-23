@@ -1,6 +1,6 @@
-package com.ynov.tamagochi;
+package com.ynov.tamagotchi;
 
-public class Tamagochi {
+public class Tamagotchi {
     String name;
     int happiness = 15;
     int age = 0;
@@ -8,10 +8,9 @@ public class Tamagochi {
     int hunger = 0; 
     boolean allReadyEat = false;
     boolean dirty = false; 
-
     int eatStrike = 0;
 
-    Tamagochi(String name) {
+    Tamagotchi(String name) {
         this.name = name;
     }
 
