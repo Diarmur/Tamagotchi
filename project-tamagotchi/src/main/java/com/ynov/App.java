@@ -1,6 +1,7 @@
 package com.ynov;
 
 import com.ynov.tamagochi.Heal;
+import com.ynov.tamagochi.Menu;
 import com.ynov.tamagochi.Tamagotchi;
 import com.ynov.time.Time;
 
@@ -28,6 +29,9 @@ public class App extends Application {
 
     public static void main(String[] args) {
         Tamagotchi tama = new Tamagotchi("test");
+
+        Menu menu = new Menu();
+        menu.test();
 
         // Heal heal = new Heal(tama);
         // heal.Sick();
