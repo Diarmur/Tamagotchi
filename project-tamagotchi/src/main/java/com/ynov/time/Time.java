@@ -36,7 +36,8 @@ public class Time {
         if(this.getTime(nowDate)-this.getTime(this.dateInit)>this.second){
             this.second++;
             if (second%10==0) {
-                this.timeUnit++;          
+                this.timeUnit++;
+                tamagotchi.age++;          
                 return true;
             }
         }
