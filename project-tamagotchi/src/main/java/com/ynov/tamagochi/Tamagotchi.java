@@ -11,8 +11,8 @@ public class Tamagotchi {
     public int NBDaysWithoutEating = 100; 
     public boolean eat = false;
     public int eatStrike = 0;
-
     public boolean sick = false;
+    public int playSick = 0;
 
     public boolean isClean = true;
 
@@ -30,8 +30,9 @@ public class Tamagotchi {
         }else{
             this.NBDaysWithoutEating ++;
             this.happiness -= this.NBDaysWithoutEating *5;
-            }
-            Clean.Dirty(this);;
+        }
+        this.playSick = 0;
+        Clean.Dirty(this);;
     }
 
 

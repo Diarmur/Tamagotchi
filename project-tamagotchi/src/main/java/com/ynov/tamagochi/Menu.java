@@ -68,11 +68,12 @@ public class Menu {
             choice = printMenu();
             switch (choice) {
                 case 1:
+                Play.PlayTamagotchi(this.tamagotchi);
                     break;
                 case 2:
                     break;
                 case 3:
-                    clean.CleanRoom(this.tamagotchi);
+                    Clean.CleanRoom(this.tamagotchi);
                     break;
                 case 4:
                     heal.HealTamagotchi();
