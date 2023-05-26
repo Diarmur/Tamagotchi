@@ -7,8 +7,9 @@ public class Tamagotchi {
     public String stageOfLife = "elder";
 
     public int hunger = 100; // en pourcent
-    public boolean eat = false;
     public int eatStrike = 0;
+    public int dayWithoutEat = 0;
+    public boolean hasEaten = true;
 
     public boolean sick = false;
 
