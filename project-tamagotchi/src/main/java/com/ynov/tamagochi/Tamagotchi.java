@@ -8,9 +8,11 @@ public class Tamagotchi {
     public int age = 0;
     public String StagesOfLife = "elder";
 
-    public int NBDaysWithoutEating = 100; 
-    public boolean eat = false;
+    public int hunger = 100; // en pourcent
     public int eatStrike = 0;
+    public int dayWithoutEat = 0;
+    public boolean hasEaten = true;
+
     public boolean sick = false;
     public int playSick = 0;
 

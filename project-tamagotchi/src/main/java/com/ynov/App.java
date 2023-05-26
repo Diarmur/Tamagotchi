@@ -40,8 +40,13 @@ public class App extends Application {
         // heal.DeathBySick();
         // System.out.println(tama.StagesOfLife);
 
-        Time timer = new Time();
-        System.out.println(timer.elapsedTime());
+        // Time timer = new Time();
+        // System.out.println(timer.elapsedTime());
+
+        
+
+       
+        
     }
 
 }

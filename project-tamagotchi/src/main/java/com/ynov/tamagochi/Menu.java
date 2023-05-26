@@ -4,10 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.ynov.time.Time;
+
 public class Menu {
     Tamagotchi tamagotchi;
     Clean clean;
     Heal heal;
+    Meal meal;
+    Time time = new Time(tamagotchi, meal, clean, heal);
+
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
@@ -65,6 +70,7 @@ public class Menu {
         System.out.println(tamagotchi.sick);
         int choice = -1;
         do {
+            time.newDay();
             choice = printMenu();
             switch (choice) {
                 case 1:
@@ -82,6 +88,7 @@ public class Menu {
                     TamagotchiStatus();
                     break;
             }
+            
         } while (choice != 0);
         System.out.println("bye bye");
     }
