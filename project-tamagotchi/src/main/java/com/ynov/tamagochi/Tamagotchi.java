@@ -4,9 +4,8 @@ public class Tamagotchi {
     public String name;
     public int happiness = 15;
     public int age = 0;
-    public String stageOfLife = "elder";
+    public String stageOfLife = "egg";
 
-    public int hunger = 100; // en pourcent
     public int eatStrike = 0;
     public int dayWithoutEat = 0;
     public boolean hasEaten = true;
@@ -24,7 +23,7 @@ public class Tamagotchi {
 
     }
 
-    void changeStage() {
+    public void changeStage() {
         if (this.stageOfLife.equals("egg") && this.age >= 1) {
             this.stageOfLife = "babe";
             this.age = 0;

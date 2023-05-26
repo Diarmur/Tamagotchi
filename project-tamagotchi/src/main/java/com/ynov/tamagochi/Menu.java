@@ -11,13 +11,14 @@ public class Menu {
     Clean clean;
     Heal heal;
     Meal meal;
-    Time time = new Time(tamagotchi, meal, clean, heal);
-
+    Time time;
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
         this.clean = new Clean(this.tamagotchi);
         this.heal = new Heal(this.tamagotchi);
+        this.time = new Time(tamagotchi, meal, clean, heal);
+
     }
 
     public int printMenu() {
@@ -88,7 +89,7 @@ public class Menu {
                     TamagotchiStatus();
                     break;
             }
-            
+
         } while (choice != 0);
         System.out.println("bye bye");
     }
@@ -98,7 +99,11 @@ public class Menu {
         System.out.println("Tamagotchi : " + tamagotchi.name);
         System.out.println();
         System.out.println("status : " + tamagotchi.stageOfLife);
-        System.out.println("hungry : " + tamagotchi.hunger);
+        if (tamagotchi.hasEaten) {
+            System.out.println(tamagotchi.name + " has eaten");
+        } else {
+            System.out.println(tamagotchi.name + " is hungry");
+        }
         System.out.println("hapiness : " + tamagotchi.happiness);
         if (tamagotchi.isClean) {
             System.out.println(tamagotchi.name + " is clean");

@@ -31,18 +31,8 @@ public class App extends Application {
     public static void main(String[] args) {
         Tamagotchi tama = new Tamagotchi("test");
 
-        Save.save(tama);
-
-        // Menu menu = new Menu(tama);
-        // menu.test();
-
-        // Heal heal = new Heal(tama);
-        // heal.Sick();
-        // tama.age++;
-        // System.out.println(tama.sick);
-        // heal.HealTamagotchi();
-        // heal.DeathBySick();
-        // System.out.println(tama.StagesOfLife);
+        Menu menu = new Menu(tama);
+        menu.test();
 
         // Time timer = new Time();
         // System.out.println(timer.elapsedTime());

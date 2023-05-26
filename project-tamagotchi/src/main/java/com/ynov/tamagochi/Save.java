@@ -16,7 +16,7 @@ public class Save {
 
         try {
 
-            // name,hapiness,age,stageOfLife,hunger,eat,eatStrike,sick,isClean
+            // name,hapiness,age,stageOfLife,hunger,eat,eatStrike,sick,isClean,save date
             file = new FileWriter("project-tamagotchi/src/main/java/com/ynov/tamagochi/Tamagotchi.csv");
 
             file.append(tamagotchi.name);
@@ -27,15 +27,15 @@ public class Save {
             file.append(DELIMITER);
             file.append(tamagotchi.stageOfLife);
             file.append(DELIMITER);
-            file.append(Integer.toString(tamagotchi.hunger));
-            file.append(DELIMITER);
-            file.append(String.valueOf(tamagotchi.eat));
+            file.append(String.valueOf(tamagotchi.hasEaten));
             file.append(DELIMITER);
             file.append(Integer.toString(tamagotchi.eatStrike));
             file.append(DELIMITER);
             file.append(String.valueOf(tamagotchi.sick));
             file.append(DELIMITER);
             file.append(String.valueOf(tamagotchi.isClean));
+            file.append(DELIMITER);
+            file.append(String.valueOf(new Date()));
             file.append(SEPARATOR);
 
             file.close();
