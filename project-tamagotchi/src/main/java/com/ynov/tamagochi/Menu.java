@@ -16,8 +16,9 @@ public class Menu {
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
         this.heal = new Heal(this.tamagotchi);
+        this.meal = new Meal(tamagotchi);
         this.time = new Time(tamagotchi, meal, clean, heal);
-
+        
     }
 
     public int printMenu() {
@@ -78,6 +79,7 @@ public class Menu {
                 Play.PlayTamagotchi(this.tamagotchi);
                     break;
                 case 2:
+                    meal.eat();
                     break;
                 case 3:
                     Clean.CleanRoom(this.tamagotchi);

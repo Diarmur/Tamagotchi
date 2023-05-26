@@ -28,25 +28,28 @@ public class Time {
         return (int) date.getTime() / 1000;
     }
 
-    private boolean elapsedTime() {
-
+    private int elapsedTime() {
+        this.timeUnit =0;
         Date nowDate = new Date();
         if (this.getTime(nowDate) - this.getTime(this.dateInit) > this.second) {
             this.second = (this.getTime(nowDate) - this.getTime(this.dateInit));
-            if (second % 10 == 0) {
-                this.timeUnit++;
-                this.tamagotchi.age++;
-                return true;
-            }
+            this.dateInit= new Date();
+            this.timeUnit = this.second/10;
+            System.out.println(this.second/10);
+            this.second = 0;
+            this.tamagotchi.age+=this.timeUnit;
+            
+            this.tamagotchi.age++;
         }
-
-        return false;
+        return this.timeUnit;
     }
 
     public void newDay() {
         elapsedTime();
-        System.out.println(this.second);
-        if (this.elapsedTime()) {
+        
+        for (int i = 0; i < this.timeUnit; i++) {
+            
+        
             this.tamagotchi.changeStage();
             if (!this.tamagotchi.hasEaten) {
                 this.tamagotchi.dayWithoutEat++;
@@ -55,19 +58,11 @@ public class Time {
             if (this.tamagotchi.dayWithoutEat > 0) {
                 this.meal.needEat();
             }
-<<<<<<< HEAD
-            Clean.Dirty(this.tamagotchi);
-            heal.Sick();
-            
-            if (tamagotchi.hasEaten) {
-                tamagotchi.isClean = false;
-=======
-            this.clean.Dirty();
+            Clean.Dirty(tamagotchi);
             this.heal.Sick();
 
             if (this.tamagotchi.hasEaten) {
                 this.tamagotchi.isClean = false;
->>>>>>> matias
             }
             this.tamagotchi.hasEaten = false;
         }
