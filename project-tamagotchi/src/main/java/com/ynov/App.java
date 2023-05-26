@@ -2,6 +2,7 @@ package com.ynov;
 
 import com.ynov.tamagochi.Heal;
 import com.ynov.tamagochi.Menu;
+import com.ynov.tamagochi.Save;
 import com.ynov.tamagochi.Tamagotchi;
 import com.ynov.time.Time;
 
@@ -32,21 +33,9 @@ public class App extends Application {
         // Menu menu = new Menu(tama);
         // menu.test();
 
-        // Heal heal = new Heal(tama);
-        // heal.Sick();
-        // tama.age++;
-        // System.out.println(tama.sick);
-        // heal.HealTamagotchi();
-        // heal.DeathBySick();
-        // System.out.println(tama.StagesOfLife);
-
         // Time timer = new Time();
         // System.out.println(timer.elapsedTime());
 
-        
-
-       
-        
     }
 
 }
