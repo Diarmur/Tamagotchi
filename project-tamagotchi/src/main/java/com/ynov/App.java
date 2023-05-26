@@ -30,7 +30,7 @@ public class App extends Application {
     public static void main(String[] args) {
         Tamagotchi tama = new Tamagotchi("test");
 
-        Menu menu = new Menu();
+        Menu menu = new Menu(tama);
         menu.test();
 
         // Heal heal = new Heal(tama);

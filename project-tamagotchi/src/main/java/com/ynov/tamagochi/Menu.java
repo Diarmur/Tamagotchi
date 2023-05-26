@@ -5,14 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Menu {
+    Tamagotchi tamagotchi;
+
+    public Menu(Tamagotchi tamagotchi) {
+        this.tamagotchi = tamagotchi;
+    }
+
     public int printMenu() {
         System.out.println("que voulez vous faire ?");
         System.out.println("1 : jouer");
         System.out.println("2 : nourrir");
         System.out.println("3 : nettoyer");
         System.out.println("4 : soigner");
+        System.out.println("5 : voir le status");
         System.out.println("0 : quitter");
-        return promptRangeNbr("veuillez faire un choix : ", 0, 4);
+        return promptRangeNbr("veuillez faire un choix : ", 0, 5);
     }
 
     public String prompt(String question) {
@@ -57,15 +64,46 @@ public class Menu {
             choice = printMenu();
             switch (choice) {
                 case 1:
-
+                    break;
                 case 2:
-
+                    break;
                 case 3:
-
+                    break;
                 case 4:
-
+                    break;
+                case 5:
+                    TamagotchiStatus();
+                    break;
             }
         } while (choice != 0);
         System.out.println("bye bye");
+    }
+
+    public void TamagotchiStatus() {
+        System.out.println();
+        System.out.println("Tamagotchi : " + tamagotchi.name);
+        System.out.println();
+        System.out.println("état : " + tamagotchi.StagesOfLife);
+        System.out.println("faim : " + tamagotchi.hunger);
+        System.out.println("joie : " + tamagotchi.happiness);
+        if (tamagotchi.isClean) {
+            System.out.println(tamagotchi.name + " est propre");
+        } else {
+            System.out.println(tamagotchi.name + " est sale");
+        }
+
+        if (tamagotchi.sick) {
+            System.out.println(tamagotchi.name + " est malade");
+        } else {
+            System.out.println(tamagotchi.name + " est en bonne santé");
+        }
+
+        InputStreamReader reader = new InputStreamReader(System.in);
+        BufferedReader buffer = new BufferedReader(reader);
+        try {
+            buffer.readLine();
+        } catch (IOException e) {
+
+        }
     }
 }
