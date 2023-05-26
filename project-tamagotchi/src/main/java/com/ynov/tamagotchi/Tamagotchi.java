@@ -26,7 +26,7 @@ public class Tamagotchi {
             }
         if(this.dirty == true){
             this.happiness -=3;
-        }
+        } 
     }
 
 
