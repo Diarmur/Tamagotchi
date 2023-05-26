@@ -23,14 +23,6 @@ public class Tamagotchi {
     // pour chaque uniter de temps passer
     public void update(){
         changeStage();
-        if(this.allReadyEat == true){
-            this.allReadyEat = false;
-            this.isClean = true;
-            this.NBDaysWithoutEating = 0;
-        }else{
-            this.NBDaysWithoutEating ++;
-            this.happiness -= this.NBDaysWithoutEating *5;
-        }
         this.playSick = 0;
         Clean.Dirty(this);;
     }

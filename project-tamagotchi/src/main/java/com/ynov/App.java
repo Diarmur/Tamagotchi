@@ -28,9 +28,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        Tamagotchi tama = new Tamagotchi("test");
-        Menu menu = new Menu(tama);
-        menu.test();
+        // Tamagotchi tama = new Tamagotchi("test");
+        // Menu menu = new Menu(tama);
+        // menu.test();
 
         // Heal heal = new Heal(tama);
         // heal.Sick();
@@ -40,8 +40,8 @@ public class App extends Application {
         // heal.DeathBySick();
         // System.out.println(tama.StagesOfLife);
 
-        // Time timer = new Time();
-        // System.out.println(timer.elapsedTime());
+        Time timer = new Time();
+        System.out.println(timer.elapsedTime());
     }
 
 }
