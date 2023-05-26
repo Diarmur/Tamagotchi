@@ -90,7 +90,7 @@ public class Menu {
         System.out.println();
         System.out.println("Tamagotchi : " + tamagotchi.name);
         System.out.println();
-        System.out.println("status : " + tamagotchi.StagesOfLife);
+        System.out.println("status : " + tamagotchi.stageOfLife);
         System.out.println("hungry : " + tamagotchi.hunger);
         System.out.println("hapiness : " + tamagotchi.happiness);
         if (tamagotchi.isClean) {

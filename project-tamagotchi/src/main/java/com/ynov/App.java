@@ -2,6 +2,7 @@ package com.ynov;
 
 import com.ynov.tamagochi.Heal;
 import com.ynov.tamagochi.Menu;
+import com.ynov.tamagochi.Save;
 import com.ynov.tamagochi.Tamagotchi;
 import com.ynov.time.Time;
 
@@ -30,8 +31,10 @@ public class App extends Application {
     public static void main(String[] args) {
         Tamagotchi tama = new Tamagotchi("test");
 
-        Menu menu = new Menu(tama);
-        menu.test();
+        Save.save(tama);
+
+        // Menu menu = new Menu(tama);
+        // menu.test();
 
         // Heal heal = new Heal(tama);
         // heal.Sick();
@@ -44,15 +47,13 @@ public class App extends Application {
         // Time timer = new Time();
         // System.out.println(timer.elapsedTime());
 
-        
         // Time timer = new Time();
         // while (timer.timeUnit !=10) {
-        //     if (timer.elapsedTime()) {
-        //         System.out.println("+1");
-        //     }
+        // if (timer.elapsedTime()) {
+        // System.out.println("+1");
         // }
-       
-        
+        // }
+
     }
 
 }

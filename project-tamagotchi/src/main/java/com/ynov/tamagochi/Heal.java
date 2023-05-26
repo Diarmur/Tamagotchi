@@ -9,7 +9,7 @@ public class Heal {
     }
 
     public void Sick() {
-        if (this.tamagotchi.StagesOfLife.equals("elder")) {
+        if (this.tamagotchi.stageOfLife.equals("elder")) {
             int chanceOfSickness = (int) (Math.random() * 3);
             if (chanceOfSickness == 0) {
                 this.tamagotchi.sick = true;
@@ -26,7 +26,7 @@ public class Heal {
 
     public void DeathBySick() {
         if (this.tamagotchi.sick && this.tamagotchi.age > this.ageSick) {
-            this.tamagotchi.StagesOfLife = "dead";
+            this.tamagotchi.stageOfLife = "dead";
         }
     }
 }

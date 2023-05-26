@@ -4,7 +4,7 @@ public class Tamagotchi {
     public String name;
     public int happiness = 15;
     public int age = 0;
-    public String StagesOfLife = "elder";
+    public String stageOfLife = "elder";
 
     public int hunger = 100; // en pourcent
     public boolean eat = false;
@@ -24,20 +24,20 @@ public class Tamagotchi {
     }
 
     void changeStage() {
-        if (this.StagesOfLife.equals("egg") && this.age >= 1) {
-            this.StagesOfLife = "babe";
+        if (this.stageOfLife.equals("egg") && this.age >= 1) {
+            this.stageOfLife = "babe";
             this.age = 0;
         }
-        if (this.StagesOfLife.equals("babe") && this.eatStrike >= 4 && this.happiness >= 40) {
-            this.StagesOfLife = "adult";
+        if (this.stageOfLife.equals("babe") && this.eatStrike >= 4 && this.happiness >= 40) {
+            this.stageOfLife = "adult";
             this.age = 0;
         }
-        if (this.StagesOfLife.equals("adult") && age >= 15) {
-            this.StagesOfLife = "elder";
+        if (this.stageOfLife.equals("adult") && age >= 15) {
+            this.stageOfLife = "elder";
             this.age = 0;
         }
-        if (this.StagesOfLife.equals("elder") && age >= 5) {
-            this.StagesOfLife = "dead";
+        if (this.stageOfLife.equals("elder") && age >= 5) {
+            this.stageOfLife = "dead";
             this.age = 0;
         }
     }
