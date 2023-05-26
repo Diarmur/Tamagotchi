@@ -1,16 +1,22 @@
-package com.ynov.tamagotchi;
+package com.ynov.tamagochi;
 
 public class Tamagotchi {
-    String name;
-    int happiness = 15;
-    int age = 0;
-    String StagesOfLife = "egg";
-    int NBDaysWithoutEating = 0; 
     boolean allReadyEat = false;
     boolean dirty = false; 
-    int eatStrike = 0;
+    public String name;
+    public int happiness = 15;
+    public int age = 0;
+    public String StagesOfLife = "elder";
 
-    Tamagotchi(String name) {
+    public int NBDaysWithoutEating = 100; 
+    public boolean eat = false;
+    public int eatStrike = 0;
+
+    public boolean sick = false;
+
+    public boolean isClean = true;
+
+    public Tamagotchi(String name) {
         this.name = name;
     }
 
