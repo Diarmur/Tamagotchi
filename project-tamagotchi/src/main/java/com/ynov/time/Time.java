@@ -13,6 +13,7 @@ public class Time {
     Meal meal;
     Clean clean;
     Heal heal;
+    int secondPerUnit = 10;//number off second for 1 time unit
     private Date dateInit = new Date();
     public int timeUnit = 0;
     private int second = 0;
@@ -34,8 +35,7 @@ public class Time {
         if (this.getTime(nowDate) - this.getTime(this.dateInit) > this.second) {
             this.second = (this.getTime(nowDate) - this.getTime(this.dateInit));
             this.dateInit= new Date();
-            this.timeUnit = this.second/10;
-            System.out.println(this.second/10);
+            this.timeUnit = this.second/this.secondPerUnit;
             this.second = 0;
             this.tamagotchi.age+=this.timeUnit;
             
