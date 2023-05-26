@@ -5,7 +5,7 @@ public class Tamagotchi {
     int happiness = 15;
     int age = 0;
     String StagesOfLife = "egg";
-    int hunger = 0; 
+    int NBDaysWithoutEating = 0; 
     boolean allReadyEat = false;
     boolean dirty = false; 
     int eatStrike = 0;
@@ -19,10 +19,10 @@ public class Tamagotchi {
         if(this.allReadyEat == true){
             this.allReadyEat = false;
             this.dirty = true;
-            this.hunger = 0;
+            this.NBDaysWithoutEating = 0;
         }else{
-            this.hunger ++;
-            this.happiness -= this.hunger *5;
+            this.NBDaysWithoutEating ++;
+            this.happiness -= this.NBDaysWithoutEating *5;
             }
         if(this.dirty == true){
             this.happiness -=3;
