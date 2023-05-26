@@ -25,15 +25,13 @@ public class Tamagotchi {
         changeStage();
         if(this.allReadyEat == true){
             this.allReadyEat = false;
-            this.dirty = true;
+            this.isClean = true;
             this.NBDaysWithoutEating = 0;
         }else{
             this.NBDaysWithoutEating ++;
             this.happiness -= this.NBDaysWithoutEating *5;
             }
-        if(this.dirty == true){
-            this.happiness -=3;
-        } 
+            Clean.Dirty(this);;
     }
 
 

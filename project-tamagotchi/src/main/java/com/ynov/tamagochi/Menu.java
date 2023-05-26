@@ -11,7 +11,6 @@ public class Menu {
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
-        this.clean = new Clean(this.tamagotchi);
         this.heal = new Heal(this.tamagotchi);
     }
 
@@ -73,7 +72,7 @@ public class Menu {
                 case 2:
                     break;
                 case 3:
-                    clean.CleanRoom();
+                    clean.CleanRoom(this.tamagotchi);
                     break;
                 case 4:
                     heal.HealTamagotchi();
@@ -98,7 +97,6 @@ public class Menu {
         } else {
             System.out.println(tamagotchi.name + " is dirty");
         }
-
         if (tamagotchi.sick) {
             System.out.println(tamagotchi.name + " is sick");
         } else {

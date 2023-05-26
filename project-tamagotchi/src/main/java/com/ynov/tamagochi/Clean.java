@@ -7,15 +7,15 @@ public class Clean {
         this.tamagotchi = tamagotchi;
     }
 
-    public void CleanRoom() {
-        if (this.tamagotchi.isClean == false) {
-            this.tamagotchi.isClean = true;
+    public static void CleanRoom(Tamagotchi tamagotchi) {
+        if (tamagotchi.isClean == false) {
+            tamagotchi.isClean = true;
         }
     }
 
-    public void Dirty() {
-        if (this.tamagotchi.isClean == false) {
-            this.tamagotchi.happiness -= 3;
+    public static void Dirty(Tamagotchi tamagotchi) {
+        if (tamagotchi.isClean == false) {
+            tamagotchi.happiness -= 3;
         }
     }
 }
