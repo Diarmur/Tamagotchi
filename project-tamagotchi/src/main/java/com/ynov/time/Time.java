@@ -6,8 +6,9 @@ import java.util.Date;
 public class Time {
 
 
-    Date dateInit = new Date();
-    
+    private Date dateInit = new Date();
+    public int timeUnit = 0;
+    private int second = 0;
     
 
     public int getTime(Date date) {
@@ -16,11 +17,16 @@ public class Time {
         return (int)date.getTime()/1000;
     }
 
-    public int elapsedTime(){
-        int second = 0;
-        Date nowDate = new Date();
-        second = this.getTime(nowDate)-this.getTime(this.dateInit);
+    public boolean elapsedTime(){
         
-        return second;
+        Date nowDate = new Date();
+        if(this.getTime(nowDate)-this.getTime(this.dateInit)>this.second){
+            this.second++;
+            this.timeUnit++;
+            return true;
+        }
+        
+        
+        return false;
     }
 }

@@ -43,6 +43,16 @@ public class App extends Application {
 
         // Time timer = new Time();
         // System.out.println(timer.elapsedTime());
+
+        
+        // Time timer = new Time();
+        // while (timer.timeUnit !=10) {
+        //     if (timer.elapsedTime()) {
+        //         System.out.println("+1");
+        //     }
+        // }
+       
+        
     }
 
 }
