@@ -6,20 +6,22 @@ import java.io.InputStreamReader;
 
 public class Menu {
     Tamagotchi tamagotchi;
+    Clean clean = new Clean(tamagotchi);
+    Heal heal = new Heal(tamagotchi);
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
     }
 
     public int printMenu() {
-        System.out.println("que voulez vous faire ?");
-        System.out.println("1 : jouer");
-        System.out.println("2 : nourrir");
-        System.out.println("3 : nettoyer");
-        System.out.println("4 : soigner");
-        System.out.println("5 : voir le status");
+        System.out.println("what do you want to do ?");
+        System.out.println("1 : play");
+        System.out.println("2 : eat");
+        System.out.println("3 : clean");
+        System.out.println("4 : heal");
+        System.out.println("5 : view the status");
         System.out.println("0 : quitter");
-        return promptRangeNbr("veuillez faire un choix : ", 0, 5);
+        return promptRangeNbr("choose : ", 0, 5);
     }
 
     public String prompt(String question) {
@@ -29,12 +31,12 @@ public class Menu {
         try {
             String answer = buffer.readLine();
             if (answer.equals("")) {
-                System.err.println("recommencez ...");
+                System.err.println("retry ...");
                 return prompt(question);
             }
             return answer;
         } catch (IOException e) {
-            System.err.println("recommencez ...");
+            System.err.println("retry ...");
             return prompt(question);
         }
     }
@@ -44,7 +46,7 @@ public class Menu {
         try {
             return Integer.parseInt(answer);
         } catch (NumberFormatException e) {
-            System.err.println("recommence avec un nbr ...");
+            System.err.println("retry with number ...");
             return promptNbr(question);
         }
     }
@@ -52,7 +54,7 @@ public class Menu {
     public int promptRangeNbr(String question, int min, int max) {
         int answer = promptNbr(question);
         if (answer < min || answer > max) {
-            System.out.println("entre " + min + " et " + max);
+            System.out.println("between " + min + " and " + max);
             return promptRangeNbr(question, min, max);
         }
         return answer;
@@ -68,8 +70,10 @@ public class Menu {
                 case 2:
                     break;
                 case 3:
+                    clean.CleanRoom();
                     break;
                 case 4:
+                    heal.HealTamagotchi();
                     break;
                 case 5:
                     TamagotchiStatus();
@@ -83,19 +87,19 @@ public class Menu {
         System.out.println();
         System.out.println("Tamagotchi : " + tamagotchi.name);
         System.out.println();
-        System.out.println("état : " + tamagotchi.StagesOfLife);
-        System.out.println("faim : " + tamagotchi.hunger);
-        System.out.println("joie : " + tamagotchi.happiness);
+        System.out.println("status : " + tamagotchi.StagesOfLife);
+        System.out.println("hungry : " + tamagotchi.hunger);
+        System.out.println("hapiness : " + tamagotchi.happiness);
         if (tamagotchi.isClean) {
-            System.out.println(tamagotchi.name + " est propre");
+            System.out.println(tamagotchi.name + " is clean");
         } else {
-            System.out.println(tamagotchi.name + " est sale");
+            System.out.println(tamagotchi.name + " is dirty");
         }
 
         if (tamagotchi.sick) {
-            System.out.println(tamagotchi.name + " est malade");
+            System.out.println(tamagotchi.name + " is sick");
         } else {
-            System.out.println(tamagotchi.name + " est en bonne santé");
+            System.out.println(tamagotchi.name + " is healthy");
         }
 
         InputStreamReader reader = new InputStreamReader(System.in);
