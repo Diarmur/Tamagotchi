@@ -6,11 +6,13 @@ import java.io.InputStreamReader;
 
 public class Menu {
     Tamagotchi tamagotchi;
-    Clean clean = new Clean(tamagotchi);
-    Heal heal = new Heal(tamagotchi);
+    Clean clean;
+    Heal heal;
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
+        this.clean = new Clean(this.tamagotchi);
+        this.heal = new Heal(this.tamagotchi);
     }
 
     public int printMenu() {
@@ -61,6 +63,7 @@ public class Menu {
     }
 
     public void test() {
+        System.out.println(tamagotchi.sick);
         int choice = -1;
         do {
             choice = printMenu();
