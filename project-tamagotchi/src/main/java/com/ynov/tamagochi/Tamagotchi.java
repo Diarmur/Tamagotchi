@@ -21,7 +21,8 @@ public class Tamagotchi {
     }
 
     // pour chaque uniter de temps passer
-    void update(){
+    public void update(){
+        changeStage();
         if(this.allReadyEat == true){
             this.allReadyEat = false;
             this.dirty = true;
@@ -36,7 +37,7 @@ public class Tamagotchi {
     }
 
 
-    void changeStage() {
+    private void changeStage() {
         if (this.StagesOfLife.equals("egg") && this.age >= 1) {
             this.StagesOfLife = "babe";
             this.age = 0;
