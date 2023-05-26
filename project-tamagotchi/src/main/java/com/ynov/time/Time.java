@@ -55,7 +55,7 @@ public class Time {
             if (tamagotchi.dayWithoutEat>0) {
                 meal.needEat();
             }
-            clean.Dirty();
+            Clean.Dirty(this.tamagotchi);
             heal.Sick();
             
             if (tamagotchi.hasEaten) {
