@@ -18,7 +18,7 @@ public class Menu {
         this.heal = new Heal(this.tamagotchi);
         this.meal = new Meal(tamagotchi);
         this.time = new Time(tamagotchi, meal, clean, heal);
-        
+
     }
 
     public int printMenu() {
@@ -76,7 +76,7 @@ public class Menu {
             choice = printMenu();
             switch (choice) {
                 case 1:
-                Play.PlayTamagotchi(this.tamagotchi);
+                    Play.PlayTamagotchi(this.tamagotchi);
                     break;
                 case 2:
                     meal.eat();
@@ -90,6 +90,10 @@ public class Menu {
                 case 5:
                     TamagotchiStatus();
                     break;
+            }
+
+            if (this.tamagotchi.stageOfLife.equals("dead")) {
+                choice = 0;
             }
 
         } while (choice != 0);

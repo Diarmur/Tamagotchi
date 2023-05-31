@@ -8,7 +8,7 @@ public class Meal {
     }
 
     public void eat() {
-        if (this.tamagotchi.eatStrike > 0 && !tamagotchi.hasEaten) {
+        if (this.tamagotchi.eatStrike >= 0 && !tamagotchi.hasEaten) {
             this.tamagotchi.eatStrike++;
             this.tamagotchi.hasEaten = true;
             this.tamagotchi.dayWithoutEat = 0;
