@@ -32,9 +32,13 @@ public class Time {
     private int elapsedTime() {
         this.timeUnit =0;
         Date nowDate = new Date();
-        if (this.getTime(nowDate) - this.getTime(this.dateInit) > this.second) {
-            this.second = (this.getTime(nowDate) - this.getTime(this.dateInit));
-            this.dateInit= new Date();
+        int secondBeetweenCall = this.getTime(nowDate) - this.getTime(this.dateInit);
+        
+        this.second+= secondBeetweenCall;
+        System.out.println("========"+this.second);
+        this.dateInit= new Date(); 
+        if (this.second > 10) {
+                      
             this.timeUnit = this.second/this.secondPerUnit;
             this.second = 0;
             this.tamagotchi.age+=this.timeUnit;
