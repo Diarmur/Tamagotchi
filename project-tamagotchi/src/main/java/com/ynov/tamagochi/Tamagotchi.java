@@ -16,6 +16,7 @@ public class Tamagotchi {
     public int playSick = 0;
 
     public boolean isClean = true;
+    public String imageURL = "img/egg.png";
 
     public Tamagotchi(String name) {
         this.name = name;
@@ -31,14 +32,17 @@ public class Tamagotchi {
     public void changeStage() {
         if (this.stageOfLife.equals("egg") && this.age >= 1) {
             this.stageOfLife = "babe";
+            this.imageURL ="img/carapuce.png";
             this.age = 0;
         }
         if (this.stageOfLife.equals("babe") && this.eatStrike >= 4 && this.happiness >= 40) {
             this.stageOfLife = "adult";
+            this.imageURL ="img/carabaffe.png";
             this.age = 0;
         }
         if (this.stageOfLife.equals("adult") && age >= 15) {
             this.stageOfLife = "elder";
+            this.imageURL ="img/tortank.png";
             this.age = 0;
         }
         if (this.stageOfLife.equals("elder") && age >= 5) {

@@ -11,8 +11,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -30,6 +32,7 @@ public class Menu {
     Label statHappiness;
     Label statSick;
     Stage stage ;
+    ImageView imageView ;
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
@@ -42,8 +45,9 @@ public class Menu {
         this.statClean  = new Label("is Clean : "+tamagotchi.isClean);
         this.statHappiness  = new Label("Happiness : "+tamagotchi.happiness);
         this.statSick  = new Label("is Sick: "+tamagotchi.sick);
+        Image image  = new Image( getClass().getResource(tamagotchi.imageURL).toExternalForm());
+        this.imageView = new ImageView(image); 
         this.stage= new Stage();
-
     }
 
     public int printMenu() {
@@ -109,7 +113,17 @@ public class Menu {
         VBox statBox = new VBox(20,this.tamgotchiLabel,this.statAge,this.statHunger,this.statClean,this.statHappiness,this.statSick);
         statBox.setAlignment(Pos.CENTER);
         statBox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: blue;");
-        HBox hbox = new HBox(20,statBox,feedButton,cleanButton,playButton,healButton);
+
+        final Pane root = new Pane(); 
+        root.getChildren().setAll(this.imageView); 
+        // imageView.setX(0); 
+        // imageView.setY(0); 
+      
+
+        // imageView.setFitHeight(220); 
+        // imageView.setFitWidth(220);
+
+        HBox hbox = new HBox(20,statBox,root,feedButton,cleanButton,playButton,healButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: red;");
         VBox vbox = new VBox(20,hbox);
@@ -144,6 +158,8 @@ public class Menu {
         this.statHunger.setText("hasEaten : "+tamagotchi.hasEaten);
         this.statClean.setText("isClean : "+tamagotchi.isClean);
         this.statHappiness.setText("Happiness : "+tamagotchi.happiness);
+        Image image  = new Image( getClass().getResource(this.tamagotchi.imageURL).toExternalForm());
+        this.imageView.setImage(image);
     }
 
     public Scene deadScene(){
