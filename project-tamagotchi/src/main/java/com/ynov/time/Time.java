@@ -3,9 +3,20 @@ package com.ynov.time;
 import java.util.Date;
 
 import com.ynov.tamagochi.Meal;
+import com.ynov.tamagochi.Menu;
 import com.ynov.tamagochi.Clean;
 import com.ynov.tamagochi.Heal;
 import com.ynov.tamagochi.Tamagotchi;
+
+import javafx.application.Platform;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class Time {
 
@@ -13,7 +24,7 @@ public class Time {
     Meal meal;
     Clean clean;
     Heal heal;
-    int secondPerUnit = 5;// number off second for 1 time unit
+    int secondPerUnit = 10;// number off second for 1 time unit
     private Date dateInit = new Date();
     public int timeUnit = 0;
     private int second = 0;
@@ -25,11 +36,36 @@ public class Time {
         this.heal = heal;
     }
 
+    public void timeScene(Menu menu){
+        Stage stage = new Stage();
+        Label label = new Label("Hello, JavaFX "+this.second);
+        //var scene = new Scene(new StackPane(label), 640, 480);
+        Button button = new Button("Click Me");
+
+        
+
+        HBox hbox = new HBox(20,button);
+        hbox.setAlignment(Pos.CENTER);
+        VBox vbox = new VBox(20,label,hbox);
+        vbox.setAlignment(Pos.CENTER);
+        Scene scene = new Scene(vbox, 640, 480);
+        button.setOnMouseClicked(e->{
+            this.elapsedTime();
+            label.setText(""+this.second);
+        });
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
     private int getTime(Date date) {
         return (int) date.getTime() / 1000;
     }
 
-    private int elapsedTime() {
+    public int elapsedTime() {
+        
+        
         this.timeUnit = 0;
         Date nowDate = new Date();
         int secondBeetweenCall = this.getTime(nowDate) - this.getTime(this.dateInit);
@@ -48,8 +84,8 @@ public class Time {
     }
 
     public void newDay() {
-        elapsedTime();
-
+        
+        
         for (int i = 0; i < this.timeUnit; i++) {
 
             this.tamagotchi.changeStage();
