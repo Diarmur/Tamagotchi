@@ -1,0 +1,30 @@
+.border{
+    -fx-padding: 10;
+    -fx-border-width: 2;
+    -fx-border-color: red;
+}
+
+.stat{
+    -fx-max-width: 200px;
+}
+
+.img{
+    /* -fx-min-height: 150px; */
+
+}
+
+.background{
+    -fx-background-image: url("dex.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.fontWhite{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+}
+
+.font{
+    -fx-font-size: 15px;
+    -fx-alignment:center;
+}
