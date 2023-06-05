@@ -3,6 +3,7 @@ package com.ynov.tamagochi;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import com.ynov.time.Time;
 
@@ -33,6 +34,7 @@ public class Menu {
     Label statSick;
     Stage stage ;
     ImageView imageView ;
+    
 
     public Menu(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
@@ -48,6 +50,8 @@ public class Menu {
         Image image  = new Image( getClass().getResource(tamagotchi.imageURL).toExternalForm());
         this.imageView = new ImageView(image); 
         this.stage= new Stage();
+        
+
     }
 
     public int printMenu() {
@@ -98,35 +102,30 @@ public class Menu {
     }
 
     public void tameScene(){
-        
-        // Label tamgotchiLabel = new Label(tamagotchi.name);
-        // Label statAge  = new Label("Age : "+tamagotchi.stageOfLife);
-        // Label statHunger  = new Label("hasEaten : "+tamagotchi.hasEaten);
-        // Label statClean  = new Label("isClean : "+tamagotchi.isClean);
-        // Label statHappiness  = new Label("Happiness : "+tamagotchi.happiness);
 
         Button feedButton = new Button("Feed Me");
         Button cleanButton = new Button("Clean Me");
         Button playButton = new Button("Play with Me");
         Button healButton = new Button("Heal me");
 
-        VBox statBox = new VBox(20,this.tamgotchiLabel,this.statAge,this.statHunger,this.statClean,this.statHappiness,this.statSick);
-        statBox.setAlignment(Pos.CENTER);
-        statBox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: blue;");
+        VBox statBox = new VBox(10,this.tamgotchiLabel,this.statAge,this.statHunger,this.statClean,this.statHappiness,this.statSick);
+        statBox.setAlignment(Pos.TOP_CENTER);
+        statBox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: blue;-fx-pref-width: 100;");
+        
+        
+    
 
-        final Pane root = new Pane(); 
-        root.getChildren().setAll(this.imageView); 
-        // imageView.setX(0); 
-        // imageView.setY(0); 
-      
+        final Pane tamagotchiImg = new Pane(); 
+        tamagotchiImg.getChildren().setAll(this.imageView);
+        HBox imgBox = new HBox(0, tamagotchiImg);
+        imgBox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: red;");
+        imgBox.setAlignment(Pos.CENTER);
 
-        // imageView.setFitHeight(220); 
-        // imageView.setFitWidth(220);
-
-        HBox hbox = new HBox(20,statBox,root,feedButton,cleanButton,playButton,healButton);
+        HBox hbox = new HBox(20,feedButton,cleanButton,playButton,healButton);
         hbox.setAlignment(Pos.CENTER);
         hbox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: red;");
-        VBox vbox = new VBox(20,hbox);
+
+        VBox vbox = new VBox(20,statBox,imgBox,hbox);
         vbox.setAlignment(Pos.CENTER);
         vbox.setStyle("-fx-padding: 10;" + "-fx-border-width: 2;"+"-fx-border-color: yellow;");
         Scene scene = new Scene(vbox, 640, 480);
@@ -154,6 +153,7 @@ public class Menu {
     }
 
     private void updateStat(){
+        this.tamgotchiLabel.setText(this.tamagotchi.name);
         this.statAge.setText("Age : "+tamagotchi.stageOfLife);
         this.statHunger.setText("hasEaten : "+tamagotchi.hasEaten);
         this.statClean.setText("isClean : "+tamagotchi.isClean);
