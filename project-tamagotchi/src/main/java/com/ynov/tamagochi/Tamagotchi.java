@@ -30,7 +30,6 @@ public class Tamagotchi {
 
     private void setListImage() {
         int n = (int)(Math.random() * 3);
-        System.out.println(n);
         ListImage.add("img/egg.png");
         switch(n){
             case 0: 
