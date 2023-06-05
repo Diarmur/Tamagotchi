@@ -33,16 +33,20 @@ public class Tamagotchi {
         if (this.stageOfLife.equals("egg") && this.age >= 1) {
             this.stageOfLife = "babe";
             this.imageURL ="img/carapuce.png";
+            this.name = "Carapuce";
             this.age = 0;
         }
         if (this.stageOfLife.equals("babe") && this.eatStrike >= 4 && this.happiness >= 40) {
             this.stageOfLife = "adult";
             this.imageURL ="img/carabaffe.png";
+            this.name = "Carabaffe";
             this.age = 0;
         }
         if (this.stageOfLife.equals("adult") && age >= 15) {
             this.stageOfLife = "elder";
             this.imageURL ="img/tortank.png";
+            this.name = "Tortank";
+            
             this.age = 0;
         }
         if (this.stageOfLife.equals("elder") && age >= 5) {
