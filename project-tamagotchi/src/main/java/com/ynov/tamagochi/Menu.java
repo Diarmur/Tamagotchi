@@ -159,14 +159,15 @@ public class Menu {
         Scene scene = new Scene(bg, 640, 480);
         scene.getStylesheets().add(cssPath);
 
-
-
+    
+        
         feedButton.setOnMouseClicked(e->{
             meal.eat();
             updateStat();
         });
         cleanButton.setOnMouseClicked(e->{
-            Clean.CleanRoom(this.tamagotchi);
+            Clean.SceneClean(this.tamagotchi);
+            //Clean.CleanRoom(this.tamagotchi);
             updateStat();
         });
         playButton.setOnMouseClicked(e->{
@@ -177,6 +178,7 @@ public class Menu {
             heal.HealTamagotchi();
             updateStat();
         });
+    
         stage.setScene(scene);
        
         

@@ -1,5 +1,7 @@
 package com.ynov.tamagochi;
 
+import javafx.stage.Stage;
+
 public class Clean {
     Tamagotchi tamagotchi;
 
@@ -17,5 +19,14 @@ public class Clean {
         if (tamagotchi.isClean == false) {
             tamagotchi.happiness -= 3;
         }
+    }
+
+    public static void SceneClean(Tamagotchi tamagotchi){
+        Stage cleanStage = new Stage();
+        cleanStage.setWidth(640);
+        cleanStage.setHeight(480);
+        
+        cleanStage.show();
+        Clean.CleanRoom(tamagotchi);
     }
 }
