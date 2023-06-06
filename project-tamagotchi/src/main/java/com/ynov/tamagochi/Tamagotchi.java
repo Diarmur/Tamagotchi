@@ -21,6 +21,7 @@ public class Tamagotchi {
     public ArrayList<String> ListImage = new ArrayList<String>() ;
     public ArrayList<String> ListName = new ArrayList<String>() ;
     public String imageURL = "img/egg.png";
+    
 
     public Tamagotchi(String name) {
         this.name = name;

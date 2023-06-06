@@ -19,6 +19,12 @@
     -fx-background-repeat: no-repeat;
 }
 
+.imgPlay{
+    -fx-background-image: url("play.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
 .fontWhite{
     -fx-text-fill: #ffffff;
     -fx-font-size: 20px;

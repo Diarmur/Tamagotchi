@@ -171,7 +171,8 @@ public class Menu {
             updateStat();
         });
         playButton.setOnMouseClicked(e->{
-            Play.PlayTamagotchi(this.tamagotchi);
+            Play.ScenePlay(this.tamagotchi);
+            //Play.PlayTamagotchi(this.tamagotchi);
             updateStat();
         });
         healButton.setOnMouseClicked(e->{
