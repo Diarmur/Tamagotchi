@@ -43,4 +43,28 @@ public class Save {
             e.printStackTrace();
         }
     }
+
+    public static void read(Tamagotchi tamagotchi) {
+        try {
+            File file = new File("project-tamagotchi/src/main/java/com/ynov/tamagochi/Tamagotchi.csv");
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line = " ";
+            String[] tempArr;
+            while ((line = br.readLine()) != null) {
+                tempArr = line.split(",");
+                tamagotchi.name = tempArr[0];
+                tamagotchi.happiness = Integer.parseInt(tempArr[1]);
+                tamagotchi.age = Integer.parseInt(tempArr[2]);
+                tamagotchi.stageOfLife = tempArr[3];
+                tamagotchi.hasEaten = Boolean.valueOf(tempArr[4]).booleanValue();
+                tamagotchi.eatStrike = Integer.parseInt(tempArr[5]);
+                tamagotchi.sick = Boolean.valueOf(tempArr[6]).booleanValue();
+                tamagotchi.isClean = Boolean.valueOf(tempArr[7]).booleanValue();
+            }
+            br.close();
+        } catch (IOException ioe) {
+            System.out.println("pas de fichier");
+        }
+    }
 }

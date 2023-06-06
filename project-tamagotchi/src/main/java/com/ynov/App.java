@@ -1,6 +1,5 @@
 package com.ynov;
 
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -28,13 +27,14 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         Tamagotchi tama = new Tamagotchi("egg");
+        // Save.save(tama);
+        // Save.read(tama);
+        System.out.println(tama.name);
         Menu menu = new Menu(tama);
         menu.timeThread();
         menu.tameScene();
+
     }
-
-
-
 
     public static void main(String[] args) {
         launch();
