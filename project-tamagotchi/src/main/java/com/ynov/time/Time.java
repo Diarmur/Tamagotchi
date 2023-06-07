@@ -72,18 +72,17 @@ public class Time {
         Date nowDate = new Date();
         int secondBeetweenCall = this.getTime(nowDate) - this.getTime(this.dateInit);
         if (secondBeetweenCall != 0) {
-            System.out.println(secondBeetweenCall);
+           
         
-        
-        this.second += secondBeetweenCall;
-        this.dateInit = new Date();
-        if (this.second > 10) {
-            this.timeUnit = this.second / this.secondPerUnit;
-            this.second = 0;
-            this.tamagotchi.age += this.timeUnit;
+            this.second += secondBeetweenCall;
+            this.dateInit = new Date();
+            if (this.second > 10) {
+                this.timeUnit = this.second / this.secondPerUnit;
+                this.second = 0;
+                this.tamagotchi.age += this.timeUnit;
 
-            this.tamagotchi.age++;
-        }
+                this.tamagotchi.age++;
+            }
         }
         return this.timeUnit;
     }
