@@ -48,7 +48,7 @@ public class Tamagotchi {
                 ListName.add("Salameche");
                 ListName.add("Reptincel");
                 ListName.add("Dracaufeu");
-            break;
+                break;
             case 2:
                 ListImage.add("img/bulbizarre.png");
                 ListImage.add("img/herbizarre.png");
@@ -64,7 +64,7 @@ public class Tamagotchi {
     public void update(){
         changeStage();
         this.playSick = 0;
-        Clean.Dirty(this);;
+        Clean.Dirty(this);
     }
 
     public void changeStage() {

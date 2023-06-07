@@ -25,15 +25,17 @@ public class Time {
     Clean clean;
     Heal heal;
     int secondPerUnit = 10;// number off second for 1 time unit
-    private Date dateInit = new Date();
+    private Date dateInit ;
     public int timeUnit = 0;
     private int second = 0;
 
-    public Time(Tamagotchi tamagotchi, Meal meal, Clean clean, Heal heal) {
+
+    public Time(Tamagotchi tamagotchi, Meal meal, Clean clean, Heal heal, Date dateSave) {
         this.tamagotchi = tamagotchi;
         this.meal = meal;
         this.clean = clean;
         this.heal = heal;
+        this.dateInit = dateSave;
     }
 
     public void timeScene(Menu menu){
@@ -69,16 +71,19 @@ public class Time {
         this.timeUnit = 0;
         Date nowDate = new Date();
         int secondBeetweenCall = this.getTime(nowDate) - this.getTime(this.dateInit);
-
+        if (secondBeetweenCall != 0) {
+            System.out.println(secondBeetweenCall);
+        
+        
         this.second += secondBeetweenCall;
         this.dateInit = new Date();
         if (this.second > 10) {
-
             this.timeUnit = this.second / this.secondPerUnit;
             this.second = 0;
             this.tamagotchi.age += this.timeUnit;
 
             this.tamagotchi.age++;
+        }
         }
         return this.timeUnit;
     }

@@ -1,7 +1,13 @@
 package com.ynov.tamagochi;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
+
+import com.ynov.time.Time;
 
 public class Save {
     // Délimiteurs qui doivent être dans le fichier CSV
@@ -44,13 +50,14 @@ public class Save {
         }
     }
 
-    public static void read(Tamagotchi tamagotchi) {
+    public static Date read(Tamagotchi tamagotchi) {
         try {
             File file = new File("project-tamagotchi/src/main/java/com/ynov/tamagochi/Tamagotchi.csv");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String line = " ";
             String[] tempArr;
+            String tempDate = " ";
             while ((line = br.readLine()) != null) {
                 tempArr = line.split(",");
                 tamagotchi.name = tempArr[0];
@@ -61,10 +68,18 @@ public class Save {
                 tamagotchi.eatStrike = Integer.parseInt(tempArr[5]);
                 tamagotchi.sick = Boolean.valueOf(tempArr[6]).booleanValue();
                 tamagotchi.isClean = Boolean.valueOf(tempArr[7]).booleanValue();
+                tempDate = tempArr[8];
             }
             br.close();
+            SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+            try {
+                return formatter.parse(tempDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         } catch (IOException ioe) {
             System.out.println("pas de fichier");
         }
+        return new Date();
     }
 }

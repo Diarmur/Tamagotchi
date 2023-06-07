@@ -25,6 +25,12 @@
     -fx-background-repeat: no-repeat;
 }
 
+.imgClean{
+    -fx-background-image: url("clean.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
 .fontWhite{
     -fx-text-fill: #ffffff;
     -fx-font-size: 20px;

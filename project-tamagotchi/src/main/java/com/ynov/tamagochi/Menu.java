@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.ynov.time.Time;
 
@@ -39,11 +40,11 @@ public class Menu {
     ImageView imageView ;
     
 
-    public Menu(Tamagotchi tamagotchi) {
+    public Menu(Tamagotchi tamagotchi,Date dateSave) {
         this.tamagotchi = tamagotchi;
         this.heal = new Heal(this.tamagotchi);
         this.meal = new Meal(tamagotchi);
-        this.time = new Time(tamagotchi, meal, clean, heal);
+        this.time = new Time(tamagotchi, meal, clean, heal,dateSave);
         this.tamgotchiLabel = new Label(tamagotchi.name);
         this.statAge  = new Label("Age : "+tamagotchi.stageOfLife);
         this.statHunger  = new Label("has Eaten : "+tamagotchi.hasEaten);
@@ -111,10 +112,6 @@ public class Menu {
         Button playButton = new Button("Play with Me");
         Button healButton = new Button("Heal me");
 
-        // Pane statBox = new VBox(10,this.statAge,this.statHunger,this.statClean,this.statHappiness,this.statSick);
-        // statBox.getStyleClass().add("border");
-        // statBox.getStyleClass().add("stat");
-        // statBox.relocate(300, 100);
 
         this.tamgotchiLabel.relocate(320, 65);
         this.tamgotchiLabel.getStyleClass().add("fontWhite");
@@ -166,12 +163,12 @@ public class Menu {
             updateStat();
         });
         cleanButton.setOnMouseClicked(e->{
-            Clean.SceneClean(this.tamagotchi);
+            Clean.SceneClean(this.tamagotchi,this);
             //Clean.CleanRoom(this.tamagotchi);
-            updateStat();
+            
         });
         playButton.setOnMouseClicked(e->{
-            Play.ScenePlay(this.tamagotchi);
+            Play.ScenePlay(this.tamagotchi,this);
             //Play.PlayTamagotchi(this.tamagotchi);
             updateStat();
         });
@@ -186,7 +183,7 @@ public class Menu {
         stage.show();
     }
 
-    private void updateStat(){
+    public void updateStat(){
         this.tamgotchiLabel.setText(this.tamagotchi.name);
         this.statAge.setText("Age : "+tamagotchi.stageOfLife);
         this.statHunger.setText("hasEaten : "+tamagotchi.hasEaten);
