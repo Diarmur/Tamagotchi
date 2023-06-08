@@ -42,6 +42,10 @@ public class Save {
             file.append(String.valueOf(tamagotchi.isClean));
             file.append(DELIMITER);
             file.append(String.valueOf(new Date()));
+            file.append(DELIMITER);
+            file.append((tamagotchi.imageURL));
+            file.append(DELIMITER);
+            file.append(Integer.toString(tamagotchi.NumPokemon));
             file.append(SEPARATOR);
 
             file.close();
@@ -69,6 +73,9 @@ public class Save {
                 tamagotchi.sick = Boolean.valueOf(tempArr[6]).booleanValue();
                 tamagotchi.isClean = Boolean.valueOf(tempArr[7]).booleanValue();
                 tempDate = tempArr[8];
+                tamagotchi.imageURL = tempArr[9];
+                tamagotchi.NumPokemon =  Integer.parseInt(tempArr[10]);
+                System.out.println(tamagotchi.NumPokemon);
             }
             br.close();
             SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
