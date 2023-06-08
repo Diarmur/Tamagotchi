@@ -72,7 +72,7 @@ public class Time {
         Date nowDate = new Date();
         int secondBeetweenCall = this.getTime(nowDate) - this.getTime(this.dateInit);
         if (secondBeetweenCall != 0) {
-            System.out.println(secondBeetweenCall);
+           // System.out.println(secondBeetweenCall);
         
         
         this.second += secondBeetweenCall;

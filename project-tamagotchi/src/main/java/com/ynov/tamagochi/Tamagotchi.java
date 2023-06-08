@@ -21,25 +21,23 @@ public class Tamagotchi {
     public ArrayList<String> ListImage = new ArrayList<String>() ;
     public ArrayList<String> ListName = new ArrayList<String>() ;
     public String imageURL = "img/egg.png";
+    public int NumPokemon = (int)(Math.random() * 3);
     
 
     public Tamagotchi(String name) {
         this.name = name;
-        setListImage();
-
     }
 
     private void setListImage() {
-        int n = (int)(Math.random() * 3);
         ListImage.add("img/egg.png");
-        switch(n){
+        switch(this.NumPokemon){
             case 0: 
-                ListImage.add("img/carapuce.png");
-                ListImage.add("img/carabaffe.png");
-                ListImage.add("img/tortank.png");
-                ListName.add("Carapuce");
-                ListName.add("Carabaffe");
-                ListName.add("Tortank");
+                ListImage.add("img/bulbizarre.png");
+                ListImage.add("img/herbizarre.png");
+                ListImage.add("img/florizarre.png");
+                ListName.add("Bullbizarre");
+                ListName.add("Herbizarre");
+                ListName.add("Florizarre");
             break;
             case 1:
                 ListImage.add("img/salameche.png");
@@ -50,12 +48,12 @@ public class Tamagotchi {
                 ListName.add("Dracaufeu");
                 break;
             case 2:
-                ListImage.add("img/bulbizarre.png");
-                ListImage.add("img/herbizarre.png");
-                ListImage.add("img/florizarre.png");
-                ListName.add("Bullbizarre");
-                ListName.add("Herbizarre");
-                ListName.add("Florizarre");
+                ListImage.add("img/carapuce.png");
+                ListImage.add("img/carabaffe.png");
+                ListImage.add("img/tortank.png");
+                ListName.add("Carapuce");
+                ListName.add("Carabaffe");
+                ListName.add("Tortank");
                 break;
         }
     }
@@ -68,23 +66,23 @@ public class Tamagotchi {
     }
 
     public void changeStage() {
+        setListImage();
         if (this.stageOfLife.equals("egg") && this.age >= 1) {
             this.stageOfLife = "babe";
-            this.imageURL = ListImage.get(1);
-            this.name = ListName.get(0);
+            this.imageURL = this.ListImage.get(1);
+            this.name = this.ListName.get(0);
             this.age = 0;
         }
         if (this.stageOfLife.equals("babe") && this.eatStrike >= 4 && this.happiness >= 40) {
             this.stageOfLife = "adult";
-            this.imageURL = ListImage.get(2);
-            this.name = ListName.get(1);
+            this.imageURL = this.ListImage.get(2);
+            this.name = this.ListName.get(1);
             this.age = 0;
         }
         if (this.stageOfLife.equals("adult") && age >= 15) {
             this.stageOfLife = "elder";
-            this.imageURL = ListImage.get(3);
-            this.name = ListName.get(2);
-            
+            this.imageURL = this.ListImage.get(3);
+            this.name = this.ListName.get(2);
             this.age = 0;
         }
         if (this.stageOfLife.equals("elder") && age >= 5) {
