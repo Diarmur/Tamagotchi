@@ -24,7 +24,7 @@ public class Time {
     Meal meal;
     Clean clean;
     Heal heal;
-    int secondPerUnit = 10;// number off second for 1 time unit
+    int secondPerUnit = 15;// number off second for 1 time unit
     private Date dateInit ;
     public int timeUnit = 0;
     private int second = 0;

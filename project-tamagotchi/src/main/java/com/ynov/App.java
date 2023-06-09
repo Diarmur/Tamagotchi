@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * JavaFX App
  */
 public class App extends Application {
-    Tamagotchi tama = new Tamagotchi("egg");
+    static Tamagotchi tama = new Tamagotchi("egg");
 
 
     @Override
@@ -25,7 +25,7 @@ public class App extends Application {
             tama = new Tamagotchi("egg");
             dateSave = new Date();
         }
-        Menu menu = new Menu(tama,dateSave);
+        Menu menu = new Menu(tama,dateSave,"javafx");
        
         
         
@@ -35,7 +35,20 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        String playStyle = "terminal"; //to play in terminal replace "javafx" with "terminal"
+
+        if (playStyle.equals("javafx")) {
+            launch();
+        }else if (playStyle.equals("terminal")) {
+            Date dateSave = Save.read(tama);
+            if (tama.stageOfLife.equals("dead")) {
+                tama = new Tamagotchi("egg");
+                dateSave = new Date();
+            }
+            Menu menu = new Menu(tama,dateSave,playStyle);
+            menu.test();
+        }
+        
 
     }
 

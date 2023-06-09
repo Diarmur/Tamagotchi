@@ -40,20 +40,25 @@ public class Menu {
     ImageView imageView ;
     
 
-    public Menu(Tamagotchi tamagotchi,Date dateSave) {
+    public Menu(Tamagotchi tamagotchi,Date dateSave,String playStyle) {
         this.tamagotchi = tamagotchi;
         this.heal = new Heal(this.tamagotchi);
         this.meal = new Meal(tamagotchi);
         this.time = new Time(tamagotchi, meal, clean, heal,dateSave);
-        this.tamgotchiLabel = new Label(tamagotchi.name);
-        this.statAge  = new Label("Age : "+tamagotchi.stageOfLife);
-        this.statHunger  = new Label("has Eaten : "+tamagotchi.hasEaten);
-        this.statClean  = new Label("is Clean : "+tamagotchi.isClean);
-        this.statHappiness  = new Text("Happiness :\n"+tamagotchi.happiness);
-        this.statSick  = new Label("is Sick: "+tamagotchi.sick);
-        Image image  = new Image( getClass().getResource(tamagotchi.imageURL).toExternalForm());
-        this.imageView = new ImageView(image); 
-        this.stage= new Stage();
+        if (playStyle.equals("javafx")) {
+            this.tamgotchiLabel = new Label(tamagotchi.name);
+            this.statAge  = new Label("Age : "+tamagotchi.stageOfLife);
+            this.statHunger  = new Label("has Eaten : "+tamagotchi.hasEaten);
+            this.statClean  = new Label("is Clean : "+tamagotchi.isClean);
+            this.statHappiness  = new Text("Happiness :\n"+tamagotchi.happiness);
+            this.statSick  = new Label("is Sick: "+tamagotchi.sick);
+        
+            Image image  = new Image( getClass().getResource(tamagotchi.imageURL).toExternalForm());
+            this.imageView = new ImageView(image); 
+            this.stage= new Stage();
+        }
+        
+        
         
 
     }

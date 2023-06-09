@@ -75,7 +75,7 @@ public class Save {
                 tempDate = tempArr[8];
                 tamagotchi.imageURL = tempArr[9];
                 tamagotchi.NumPokemon =  Integer.parseInt(tempArr[10]);
-                System.out.println(tamagotchi.NumPokemon);
+                
             }
             br.close();
             SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
