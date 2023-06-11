@@ -8,11 +8,6 @@
     -fx-max-width: 200px;
 }
 
-.img{
-    /* -fx-min-height: 150px; */
-
-}
-
 .background{
     -fx-background-image: url("dex.png");
     -fx-background-size: cover;
